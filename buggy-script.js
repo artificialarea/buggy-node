@@ -29,3 +29,15 @@ linesInSource.forEach(line => {
     { flag: 'w+', encoding: 'utf-8' }
   );
 });
+
+
+/* NOTES TO SELF /////////////////////////////////////
+
+[1] $ node buggy-script.js ./source.txt ./targetdir
+generates a series of files in ./targetdir, per source.txt, via terminal
+
+[2] "args": ["./source.txt", "./targetdir"]
+added these arguments in launch.json so node debugger works (sans terminal)
+
+
+*/
