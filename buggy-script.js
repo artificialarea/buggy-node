@@ -19,13 +19,20 @@ if (!fs.existsSync(target)) {
 linesInSource.forEach(line => {
   // get the content of the lines, first word is a filename, rest is content
   const [ filename, ...contentArr ] = line.split(' ');
+
+  // convert content array to string, removing commas if applicable
+  const contentString = contentArr.join(' ')
+  // console.log(contentArr);
+  // console.log(contentString);
+
   // construct the full path for the file to create
   const newFilePath = path.join(__dirname, target, filename);
 
   // write the file and it's contents
   fs.writeFileSync(
     newFilePath,
-    contentArr,
+    // contentArr,
+    contentString,
     { flag: 'w+', encoding: 'utf-8' }
   );
 });
